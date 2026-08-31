@@ -1,0 +1,24 @@
+【用途】
+把本提示词发给 AI，并附上你的风格描述；要求它基于
+themes/_theme_orient_template.py 生成可加载的角度适配主题。
+
+【提示词正文 — 复制以下全部】
+
+请基于仓库文件 themes/_theme_orient_template.py 生成一个新的 USB Display HUD 主题。
+
+硬性要求：
+1. 新建 themes/<snake_id>.py（不要以下划线开头），不要改模板文件本身。
+2. 继承 app.themes.base.Theme；实现 canvas_size / render_frame / render /
+   _render_portrait / _render_landscape（结构与模板一致）。
+3. id、name、description、类名与文件名一致且唯一；width=720, height=1280。
+4. 0°/180° 画 720×1280 竖屏布局；90°/270° 画 1280×720 横屏布局。
+   两套布局视觉语言一致，禁止只旋转竖屏图冒充横屏。
+5. 展示至少：时间、主机/数据源、CPU、GPU、内存、磁盘、网络；可用 snap.* 字段。
+6. 只用 PIL Image/ImageDraw 与 app.themes.draw_utils；不要新增依赖。
+7. 不要设置 preferred_orientation（让用户自由选角度），除非我明确要求。
+
+风格需求（填写后发送）：
+- 风格名 / 参考：
+- 主色与氛围：
+- 版式偏好：
+- 其它约束：

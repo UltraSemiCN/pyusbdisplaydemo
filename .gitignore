@@ -1,0 +1,43 @@
+# Virtual env
+.venv/
+venv/
+.env/
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Tooling / IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local outputs / previews
+out/
+*.log
+preview*.png
+preview*.jpg
+preview*.jpeg
+屏幕截图*.png
+
+# SSH keys (never commit)
+id_rsa
+id_rsa.pub
+*.pem
+*.ppk
+
+# PyInstaller / release output
+build/
+dist/
+release/
+UsbDisplayHud-*.zip
+*.spec

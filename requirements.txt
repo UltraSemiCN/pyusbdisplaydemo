@@ -1,0 +1,5 @@
+pyusbdisplay>=0.1.2
+Pillow>=10.0.0
+psutil>=5.9.0
+PySide6>=6.6.0
+pyinstaller>=6.0.0
