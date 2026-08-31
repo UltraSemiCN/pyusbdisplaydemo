@@ -64,7 +64,11 @@ $commit = (& git.exe commit-tree $masterTree "-p" $parent "-m" $msg).Trim()
 if (-not $commit) {
     throw "git commit-tree failed"
 }
-& git.exe branch -f githubmain $commit
+# Cannot `branch -f` while githubmain is checked out; move tip with reset.
+& git.exe reset --hard $commit
+if ($LASTEXITCODE -ne 0) {
+    throw "Failed to move githubmain to $commit"
+}
 Write-Host ("New tip: " + $commit)
 
 Write-Host "==> Push github githubmain"
