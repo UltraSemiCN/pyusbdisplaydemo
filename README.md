@@ -72,3 +72,18 @@ UsbDisplayHud-0.0.1.zip   # 解压即用，内容与 release/ 相同
 ## AIDA64
 
 Preferences → External Applications → 勾选 **Shared Memory**。
+
+## GitLab / GitHub
+
+| 远端 | 分支 | 用途 |
+|------|------|------|
+| GitLab | `master` | 完整开发历史 |
+| GitHub | `githubmain` | 开源快照（短线性历史） |
+
+将当前 `master` 内容同步到 GitHub（追加 1 个相关提交，不用 orphan）：
+
+```powershell
+.\sync-githubmain.ps1
+```
+
+不要在 GitHub 上 Merge `master` → `githubmain`（两边开发历史不共享，应走脚本）。也不要再用 `--orphan` 定期压扁。
